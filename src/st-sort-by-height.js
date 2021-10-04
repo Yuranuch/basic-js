@@ -13,13 +13,9 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function sortByHeight(arr) {
   throw new NotImplementedError('Not implemented');
-
-
     arr.sort(compareNum);
     function compareNum (a,b) {
       return a-b;
     }
     return arr;
-
-
-}
+};
