@@ -18,13 +18,20 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function getMatrixElementsSum(matrix) {
   throw new NotImplementedError('Not implemented');
-  let count = 0;
+  let arrayIndex = [];
+  let summ =0;
   for (let i = 0; i < matrix.length; i++){
-    if(matrix[i][0] == 0) {
-      for (let t = 0; t < matrix[i].length; t++ ){
-        count = count + matrix[i][t]
+    console.log(matrix[i]);
+
+    for (let t = 0; t < matrix[i].length; t++ ){
+      if(matrix[i][t] === 0) {
+        arrayIndex.push(t);
       }
-    }
-  }
-  return count
-}
+      if(arrayIndex.includes(t)) {
+        continue
+      }
+      summ = summ + matrix[i][t]
+    };
+  };
+  return summ
+};
