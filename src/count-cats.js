@@ -18,8 +18,9 @@ export default function countCats(matrix) {
   let counter = 0;
   for(let i = 0; i < matrix.length; i++){
     for(let t = 0; t < matrix[i].length; t++){
+
       if(matrix[i][t] == '^^'){
-        return counter += 1
+        return counter += 1;
       }
     }
   }

@@ -15,13 +15,17 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function createDreamTeam(members) {
   let someString = ""
-  members.sort();
+  members = members.map( i => i.trim().toUpperCase()).sort();
   for(let i = 0; i < members.length; i++){
     if(typeof(members[i]) === 'string' ){
-      let letters = members[i].slice(0, 1)
+      let letters = members[i].toUpperCase().slice(0, 1);
       someString = someString + letters
-    }else {
-      continue
+    }
+    // else if(typeof(members[i]) === 'number' || typeof(members[i]) === 'boolean' || typeof(members[i]) == 'null'){
+    //   continue
+    // }
+    else{
+      return false
     }
   }
   return someString
